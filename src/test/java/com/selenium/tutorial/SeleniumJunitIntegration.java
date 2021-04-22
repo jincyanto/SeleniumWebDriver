@@ -1,4 +1,4 @@
-package com.selenium.tut;
+package com.selenium.tutorial;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

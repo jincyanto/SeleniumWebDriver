@@ -77,7 +77,6 @@ public class MiniProject {
         }catch (Exception e){
             e.printStackTrace();
         }
-
     }
 
     @Test
@@ -89,6 +88,14 @@ public class MiniProject {
         driverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"passwd\"]"))).sendKeys("password@123");
         driverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"SubmitLogin\"]/span"))).click();
     }
+
+    @Test
+    public void signOut(){
+        driver.navigate().to("http://automationpractice.com/index.php?controller=order-slip");
+        driverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"header\"]/div[2]/div/div/nav/div[2]/a"))).click();
+    }
+
+
 
     public WebElement getVisibilty(String xpath){
 

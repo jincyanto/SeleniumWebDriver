@@ -80,11 +80,22 @@ public class MiniProject {
 
     }
 
+    @Test
+    public void signIn(){
+        driver.navigate().to("http://automationpractice.com/index.php");
+        driverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a"))).click();
+        driverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"email_create\"]"))).click();
+        driverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"email\"]"))).sendKeys("janedoe@gmail.com");
+        driverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"passwd\"]"))).sendKeys("password@123");
+        driverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"SubmitLogin\"]/span"))).click();
+    }
+
     public WebElement getVisibilty(String xpath){
 
         WebElement ele = driver.findElement(By.xpath(xpath));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView();",ele);
+
         return ele;
 
     }

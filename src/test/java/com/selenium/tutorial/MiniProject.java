@@ -97,6 +97,7 @@ public class MiniProject {
 
 
 
+
     public WebElement getVisibilty(String xpath){
 
         WebElement ele = driver.findElement(By.xpath(xpath));
